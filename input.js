@@ -1,4 +1,4 @@
-// const { MOVE_UP_KEY, MOVE_DOWN_KEY, MOVE_RIGHT_KEY, MOVE_LEFT_KEY, MESSAGES } = require('./constants');
+const { MOVEUP, MOVEDOWN, MOVERIGHT, MOVELEFT, MESS } = require(`../snake-client/constants`);
 
 let connection;
 
@@ -18,13 +18,13 @@ const handleUserInput = function () {
     if (key === '\u0003') {
       process.exit();
     }
-    if (key === "w") {
+    if (key === MOVEUP) {
       connection.write('Move: up')
-    } else if (key === "a") {
+    } else if (key === MOVELEFT) {
       connection.write('Move: left')
-    } else if (key === "d") {
+    } else if (key === MOVERIGHT) {
       connection.write('Move: right')
-    } else if (key === "s") {
+    } else if (key === MOVEDOWN) {
       connection.write('Move: down')
     }
     connection.write('Say: Goooooo Faster !' )
